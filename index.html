@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braservice | Assistência Técnica Especializada</title>
+    <meta name="description" content="Apresentação da nossa empresa corporativa, serviços e informações de contato.">
+    <!-- Fonte Premium Inter (Igual ao primeiro modelo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#home" class="logo-container">
+            <!-- A imagem da sua logomarca aparecerá aqui. Salve como 'logo.png' -->
+            <img src="logo.png" alt="Braservice Logomarca" class="logo-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">A Empresa</a></li>
+            <li><a href="#contato">Atendimento</a></li>
+        </ul>
+        <div style="display: flex; gap: 10px;">
+            <!-- O link "#" abaixo será trocado depois pelo link do seu Google Maps -->
+            <a href="#" target="_blank" class="btn-location-small">Localização</a>
+            <a href="https://wa.me/5562985912985?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                target="_blank" class="btn-primary-small">Contato via WhatsApp</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Assistência Técnica Especializada</span>
+            <h1>Manutenção Avançada em<br><span class="text-gradient">Eletrodomésticos</span></h1>
+            <p>Técnicos certificados operando com peças originais e diagnóstico preciso para o imediato retorno do
+                funcionamento dos seus equipamentos.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5562985912985?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    target="_blank" class="btn-primary">Solicitar Orçamento</a>
+                <a href="#contato" class="btn-secondary">Nossa Estrutura</a>
+            </div>
+        </div>
+
+        <div class="hero-graphics">
+            <!-- Imagem Única de Múltiplos Aparelhos Eletrodomésticos -->
+            <img src="aparelhos.png" alt="Linha Completa de Eletrodomésticos" class="img-appliance img-group">
+        </div>
+    </header>
+
+    <section id="sobre" class="about">
+        <div class="about-container">
+
+            <div class="about-info">
+                <h2 class="about-title">Especialistas em Linha Branca</h2>
+                <div class="divider"></div>
+                <p class="about-description">
+                    A Braservice é a sua parceira de confiança para assistência técnica especializada. Realizamos
+                    manutenção, conserto e instalação de <strong>geladeiras, máquinas de lavar, secadoras, lava-louças,
+                        fogões, cooktops e fornos</strong>. Trabalhamos com peças originais e técnicos
+                    treinados para devolver o perfeito funcionamento do seu eletrodoméstico com agilidade e garantia.
+                </p>
+            </div>
+
+            <p class="brands-title">Marcas que Atendemos</p>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="logo_brastemp.png" alt="Brastemp" class="brand-logo">
+                </div>
+                <div class="brand-item">
+                    <img src="logo_consul.png" alt="Consul" class="brand-logo">
+                </div>
+                <div class="brand-item">
+                    <img src="logo_electrolux.png" alt="Electrolux" class="brand-logo">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="contact-wrapper">
+
+            <!-- Painel Esquerdo: Informações -->
+            <div class="contact-info-panel">
+                <h2>Fale com a Braservice</h2>
+                <p>Nossa equipe está pronta para atender você com agilidade e transparência.</p>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">&#128241;</div>
+                    <div>
+                        <span class="contact-label">WhatsApp / Telefone</span>
+                        <span class="contact-value">(62) 98591-2985</span>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">&#9993;&#65039;</div>
+                    <div>
+                        <span class="contact-label">E-mail Institucional</span>
+                        <span class="contact-value">atendimento@braservice.com.br</span>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">&#127758;</div>
+                    <div>
+                        <span class="contact-label">Área de Atendimento</span>
+                        <span class="contact-value">Goiânia e Aparecida de Goiânia</span>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-icon">&#128336;</div>
+                    <div>
+                        <span class="contact-label">Horário de Operação</span>
+                        <span class="contact-value">Segunda a Sábado, Horário Comercial</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel Direito: Formulário -->
+            <div class="contact-form-panel">
+                <h3>Solicitar Visita Técnica</h3>
+                <p>Preencha os campos abaixo e entraremos em contato em breve.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Nome do Responsável</label>
+                        <input type="text" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone de Contato</label>
+                        <input type="text" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Equipamento e Defeito</label>
+                        <textarea placeholder="Ex: Geladeira Brastemp – não está gelando" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-100">Encaminhar Solicitação</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Braservice - Engenharia M. e Assessoria Técnica. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Navegação suave entre os setores do site
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Lógica de sombreamento Navbar no rolar da página
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.style.background = '#1A365D'; /* Azul Marinho Vibrante um pouquinho mais claro */
+                nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'; /* Sombra para destacar o limite */
+            } else {
+                nav.style.background = '#1A365D'; /* Fundo intocado no topo */
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,677 @@
+/* Variáveis de Cores (Design System Austero / Sóbrio) */
+:root {
+    --bg-dark: #FFFFFF;
+    /* Era escuro, virou Branco Absoluto */
+    --bg-secondary: #F8FAFC;
+    /* Branco/Cinza gelo muito sutil */
+    --text-main: #0F1623;
+    /* Preto elegante para texto no fundo claro */
+    --text-muted: #4B5563;
+    /* Cinza Escuro descritivo */
+
+    /* Azul Corporativo / Fechado */
+    --primary-color: #1E4D8C;
+    --primary-hover: #163B6F;
+    --secondary-color: #4A7AB7;
+
+    /* Cores de Vidro agora Claras */
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    /* Borda claríssima ao invés de translúcida */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 800;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.divider {
+    height: 4px;
+    width: 60px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    margin: 1rem 0 2rem;
+    border-radius: 4px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    /* Maior espaçamento interno */
+    background: rgba(30, 77, 140, 0.15);
+    border: 1px solid rgba(30, 77, 140, 0.4);
+    color: var(--secondary-color);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    /* Muito maior e evidente */
+    font-weight: 800;
+    /* Super nítido */
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Glassmorphism Refinado */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botões do primeiro visual com traços mais retos para dar firmeza */
+.btn-primary,
+.btn-primary-small,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    border-radius: 8px;
+    /* Era 50px no primeiro, agora está 8px (forma firme de empresa) */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary,
+.btn-secondary {
+    background: var(--secondary-color);
+    /* Cor unificada com o azul da badge */
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(74, 122, 183, 0.3);
+    border: none;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background: var(--primary-color);
+    /* Fica mais escuro no hover */
+    box-shadow: 0 6px 20px rgba(30, 77, 140, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary-small {
+    display: inline-block;
+    background: #FFFFFF;
+    /* Botão Branco Absoluto */
+    color: #0B1120 !important;
+    /* Letra super escura/negrito */
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    font-weight: 800;
+    /* NEGRITO MÁXIMO */
+    transition: all 0.3s ease;
+}
+
+.btn-primary-small:hover {
+    background: var(--secondary-color);
+    color: #FFFFFF !important;
+}
+
+.btn-location-small {
+    display: inline-block;
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    /* Borda branca pra marcar presença */
+    padding: 0.6rem 1.4rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    font-weight: 800;
+    /* NEGRITO MÁXIMO */
+    transition: all 0.3s ease;
+}
+
+.btn-location-small:hover {
+    background: #FFFFFF;
+    color: #0B1120;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    background: #1A365D;
+    /* Azul Marinho Vibrante um pouquinho mais claro */
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 120px;
+    /* Redução leve na altura real do arquivo para balancear */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+    transform-origin: left center;
+    transform: scale(1);
+    /* Alívio no escaneamento "Zoom in" pra 120% */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+    /* Espaçamento expandido para letras maiúsculas */
+}
+
+.nav-links a {
+    font-weight: 800;
+    /* NEGRITO EXTRA FORTE REQUISITADO */
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    /* Textos Brancos Puros pra destacar no azul profundo */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    text-shadow: none;
+    /* Sombras brancas removidas em fundo claro */
+}
+
+/* Hero Section (A Original Modificada) */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dá um pouco mais de espaço horizontal para a nova caixa */
+    gap: 2rem;
+    align-items: center;
+    padding: 160px 4% 60px;
+    position: relative;
+    overflow: hidden;
+    background: url('nova_cozinha.png') center/cover no-repeat;
+    /* Cenário Real escolhido pelo Cliente */
+    z-index: 1;
+}
+
+/* Mascara Degradê para não ofuscar o Texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Protege firme o texto na Esquerda com 95% de tinta Branca, dissolvendo pra 20% na Direita perto das máquinas */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 25%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.2) 100%);
+    z-index: -1;
+}
+
+/* Degradê suave da parede pro Chão branco embaixo */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    background: rgba(30, 77, 140, 0.15);
+    /* Azul clarinho e suave de fundo unificado com a Badge */
+    border: 1px solid rgba(30, 77, 140, 0.4);
+    /* Escaneamento IDÊNTICO das bordas arredondadas da badge */
+    padding: 3.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    /* Efeito Matte de Vidro por cima da foto de cozinha */
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 5;
+    /* Fica acima de tudo pra dar o efeito 3d */
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    /* A largura máxima sumiu, pois a própria caixa delimita bem o espaço */
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    /* Ampliado o gap para dar fôlego aos botões imensos */
+    flex-wrap: wrap;
+}
+
+/* Regra específica para os botões do Hero, transformando em "Megabotões" */
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    /* Volume maciço interno */
+    font-size: 0.95rem;
+    /* Textos muito mais legíveis e atrativos */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Uma sombra leve para os megabotões se destacarem no vidro */
+}
+
+.hero-graphics {
+    position: relative;
+    height: 100%;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Posicionamento 3D das Imagens PNG de Máquinas */
+.img-appliance {
+    position: absolute;
+    transition: transform 0.5s ease;
+}
+
+.img-group {
+    width: 600px;
+    /* Extremamente larga para expor todos os 5 aparelhos de uma vez */
+    /* Empurra 30px p/ direita e Rebaxa 90px p/ alinhar com o fundo da moldura do texto */
+    transform: translate(30px, 90px);
+    z-index: 10;
+    /* Filtragem pesada com DUPLA sombra para ancorar no chão de quem observa */
+    filter: drop-shadow(0 40px 25px rgba(0, 0, 0, 0.5)) drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* Sessão Institucional na Base */
+.about {
+    padding: 50px 5%;
+    background: #1A365D;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-container .divider {
+    margin: 1.5rem auto 2.5rem;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: #E2E8F0;
+    /* Cinza clarinho/brancuzado pra ler perfeito no escuro */
+    margin-bottom: 4rem;
+    line-height: 1.8;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    /* Letra inteiramente branca agora */
+    background: none;
+    -webkit-text-fill-color: initial;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Uma sombra pra projetar contra o azul marinho */
+}
+
+.stat-label {
+    color: #93C5FD;
+    /* Azul pálido/gelo claro pros subtítulos não sumirem */
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Seção Marcas que Atendemos */
+.brands-section {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.brands-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #93C5FD;
+    /* Mesmo azul gelo dos labels de stats */
+    margin: 4rem 0;
+
+    text-align: center;
+
+}
+
+.brands-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.brand-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(147, 197, 253, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.brand-logo {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.brand-item:hover .brand-logo {
+    opacity: 1;
+}
+
+/* Área de Contato do Fundo */
+.contact {
+    padding: 60px 5%;
+    background: #F0F4F8;
+}
+
+.contact-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Painel Esquerdo Azul */
+.contact-info-panel {
+    background: #1A365D;
+    padding: 3.5rem;
+    color: #FFFFFF;
+}
+
+.contact-info-panel h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    color: #FFFFFF;
+}
+
+.contact-info-panel>p {
+    color: #93C5FD;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.contact-info-item:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.contact-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #93C5FD;
+    margin-bottom: 0.3rem;
+}
+
+.contact-value {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Painel Direito Branco */
+.contact-form-panel {
+    background: #FFFFFF;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Alinhado pelo topo igual ao painel esquerdo */
+}
+
+.contact-form-panel h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1A365D;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-panel>p {
+    color: #6B7280;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 1rem 1.3rem;
+    color: #111827;
+    font-size: 1.1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1A365D;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9CA3AF;
+}
+
+/* Rodapé Final */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+    background: #040608;
+    font-size: 0.9rem;
+}
+
+/* Responsividade de Tela para Celulares */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-graphics {
+        margin-top: 4rem;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- NOVA FORMATAÇÃO: Informações da Empresa (Sobre) --- */
+.about-info {
+    margin-bottom: 4rem;
+    /* Dá um espaço entre o texto e a área das marcas */
+    text-align: center;
+}
+
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+.about-container .divider {
+    margin: 1.5rem auto 2rem auto;
+    /* Centraliza a linha colorida */
+}
+
+.about-description {
+    font-size: 1.15rem;
+    color: #E2E8F0;
+    /* Cor clarinha para leitura perfeita no fundo azul */
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about-description strong {
+    color: #93C5FD;
+    /* Destaca os aparelhos (geladeiras, fogões, etc) num tom de azul gelo */
+    font-weight: 700;
+}
+
+/* Previne que o menu fixo esconda o topo das seções ao clicar nos links */
+section {
+    scroll-margin-top: 100px;
+    /* O valor de 100px compensa a altura do seu menu superior */
+}
